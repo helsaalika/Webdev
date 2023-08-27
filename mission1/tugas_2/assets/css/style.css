@@ -1,0 +1,100 @@
+body {
+  font-family: "source-sans-pro";
+}
+
+h1 {
+  font-family: "Times New Roman", Times, serif;
+}
+
+.mr-3 {
+  margin-right: 30px;
+}
+
+.grey-title {
+  color: #38404f;
+}
+
+.text {
+  font-size: 22px;
+}
+
+.text-grey {
+  color: #778298;
+}
+
+.text-sz {
+  font-size: 16px;
+}
+
+.img-logo {
+  width: 200px;
+  max-width: 100%;
+}
+
+.bg-grey {
+  background: #f3f4f6;
+}
+
+.text-title {
+  font-weight: 400;
+  font-size: 65px;
+}
+
+.title2 {
+  font-size: 50px;
+}
+
+.red-text {
+  color: #de3f1c;
+}
+
+.img-container {
+  width: 100px; /* Atur lebar dan tinggi sesuai keinginan */
+  height: 100px;
+}
+.img-bg {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%; /* Membuat gambar bulat */
+}
+.form-main {
+  padding: 15px;
+  width: 400px;
+  border-radius: 2px;
+  border: 0px;
+  box-shadow: 0px 1px 1px grey;
+}
+.form-footer {
+  padding: 15px;
+  width: 70%;
+  border-radius: 2px;
+  border: 0px;
+  box-shadow: 0px 1px 1px grey;
+}
+.btn-main {
+  border: 0px;
+  background-color: #65d777;
+  padding: 0px 15px;
+  color: white;
+  font-weight: 500;
+  border-radius: 0px 5px 5px 0px;
+}
+.bottom-form {
+  background-color: #f3f4f6;
+  padding: 30px;
+  border-radius: 5px;
+}
+.end-section {
+  padding: 20px 0px;
+  margin-bottom: 2rem;
+}
+
+.menu-list {
+  color: #778298 !important;
+  text-decoration: none;
+}
+.menu-list:hover {
+  text-decoration: underline;
+}
