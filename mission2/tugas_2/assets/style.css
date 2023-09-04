@@ -1,0 +1,70 @@
+h2,h3 {
+    text-align: center;
+}
+
+#boardGame{
+    width: 600px;
+    height: 300px;
+    background-image: url('bg/bg.png'); /* Path gambar */
+    background-size: 100% 100%;
+    margin: 20px auto;
+}
+
+#area{
+    width: 600px;
+    height: 300px;
+    position: absolute;
+    overflow: hidden;
+}
+
+@keyframes lari{
+    0%{
+        background-image: url('char/run1.png');
+        background-size: 100% 100%;
+    }
+    20%{
+        background-image: url('char/run2.png');
+        background-size: 100% 100%;
+    }
+    50%{
+        background-image: url('char/run5.png');
+        background-size: 100% 100%;
+    }
+    75%{
+        background-image: url('char/run4.png');
+        background-size: 100% 100%;
+    }
+}
+
+#kid{
+    width: 100px;
+    height: 100px;
+    background-image: url('char/run1.png');
+    background-size: 100% 100%;
+    position: absolute;
+    margin-top: 170px;
+    margin-left: 50px;
+    animation: lari 0.3s infinite;
+    transition: 1s;
+}
+
+#kid.freeze{
+    animation: none;
+    background-image: url(char/jump1.png);
+    background-size: 100% 100%;
+}
+
+#kid.dizzy{
+    animation: none;
+    background-image: url(char/dizzy.png);
+    background-size: 100% 100%;
+}
+
+#box{
+    width: 50px;
+    height: 50px;
+    margin-top: 215px;
+    background-image: url('char/redbox.png');
+    background-size:  100% 100%;
+    margin-left: 600px;
+}

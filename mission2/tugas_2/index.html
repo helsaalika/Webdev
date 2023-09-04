@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turbo Kid Game</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <h2>Kid Run</h2>
+        <h3>Score : <span id="score">0</span></h3>
+    <div id="boardGame" style="background-position: 0px;">
+        <div id="area">
+            <div id="kid"></div>
+            <div id="box" style="margin-left: 600px;"></div>
+        </div>
+    </div>
+    
+    <script type="text/javascript">
+        var isMoving = true;
+        function setBgMoving(){
+            if(isMoving == true){
+                setTimeout(function(){
+                    //simpan board
+                    var bg = document.getElementById('boardGame');
+                    //bg berjalan
+                    bg.style.backgroundPosition = (parseInt(bg.style.backgroundPosition.replace('px',''))-1) + 'px';
+                    //tambah score
+                    document.getElementById('score').innerHTML = parseInt(document.getElementById('score').innerHTML) + 1;
+
+                    //memanggil fungsi rekursif
+                    setBgMoving();
+
+                },5);
+            }   
+        }
+
+        //inisialisasi fungsi
+        setBgMoving();
+
+        function setBoxMoving(){
+            var box = document.getElementById('box'),
+                kid = document.getElementById('kid');
+
+            setTimeout(function(){
+                box.style.marginLeft = (parseInt(box.style.marginLeft.replace('px',''))-1) + 'px';
+
+                if(parseInt(box.style.marginLeft.replace('px','')) < -100){
+                    box.style.marginLeft = "600px"
+                }
+
+                if (
+                    kid.offsetTop + 50 >= box.offsetTop &&
+                    kid.offsetLeft + 50 >= box.offsetLeft &&
+                    kid.offsetTop + 50 <= box.offsetTop + 50 &&
+                    kid.offsetLeft <= box.offsetLeft + 50
+                ) {
+                    // Mengubah kelas kid menjadi 'dizzy' dengan penundaan
+                    document.getElementById('kid').setAttribute('class', 'dizzy');
+
+                    // Menunggu beberapa waktu sebelum menampilkan alert
+                    setTimeout(function () {
+                        alert('Game Over, Score anda : ' + document.getElementById('score').innerHTML);
+
+                        // Setelah alert ditampilkan, mengubah kelas kid dan menonaktifkan pergerakan
+                        kid.setAttribute('class', 'dizzy');
+                        isMoving = false;
+                        location.reload();
+                    }, 100); // Ubah nilai penundaan sesuai kebutuhan Anda
+                } else {
+                     setBoxMoving();
+                }
+            },5);
+        }
+
+        //inisialisasi fungsi
+        setBoxMoving();
+
+        window.addEventListener('keyup', function(e){
+            //untuk mendeteksi tombol up
+            if(e.keyCode == 38){
+                //setting kid loncat
+                document.getElementById('kid').style.marginTop = "30px";
+                document.getElementById('kid').setAttribute('class','freeze');
+                //setting kid kembali turun/mendarat
+                setTimeout(function(){
+                    document.getElementById('kid').style.marginTop = "170px";
+                    document.getElementById('kid').setAttribute('class','');
+                },1000);
+            }
+        });
+    </script>
+</body>
+</html>

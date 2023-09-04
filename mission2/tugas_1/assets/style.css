@@ -1,0 +1,58 @@
+h2{
+    font-family:'Brusher', cursive;
+    color:peru;
+}
+
+.left-column {
+    background-color:bisque;
+    padding: 20px; 
+    height: 100vh; 
+}
+
+.right-column {
+    background-color: #ffffff; 
+    padding: 20px; 
+    height: 100vh; 
+}
+
+#card-img-top{
+    margin-left: 30px;
+}
+
+.produk-item {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+
+.gambar-kecil {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.produk-item p {
+    margin: 0;
+}
+
+.total-harga {
+    text-align: right;
+    font-weight: bold;
+}
+
+#struk {
+    font-family :monospace;
+}
+
+#totalPajakHarga{
+    text-align: right;
+}
+
+#harga {
+    color: coral;
+}
+
+
+
+
+
